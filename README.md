@@ -62,5 +62,3 @@ Le bâtiment comporte **6 zones** :
 
 ---
 
-## 🏗️ Architecture générale du projet
-
