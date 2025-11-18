@@ -1,17 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Layout</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./script.js" defer></script>
-    <title>Workspace Staff Manage>r</title>
 </head>
+
 <body>
 
-    <header>
-        <h1>Workspace Staff Manage System</h1>
-    </header>
-    
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Staff Members (Unassigned)</h2>
+
+            <div class="staff-card">
+                <img src="https://avatar.iran.liara.run/public/1" alt="User">
+                <div>
+                    <h4>Hamza</h4>
+                    <p>staff</p>
+                </div>
+                <button class="edit-btn">Edit</button>
+            </div>
+
+            <button class="add-btn">Add New Worker</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-area">
+
+            <!-- Floor Image Wrapper -->
+            <div class="floor-wrapper">
+                <img src="./assets/img/background.jpg" class="floor-image" alt="Floor Plan">
+
+                <!--Conference Room-->
+                <div class="conference">
+                    <P class="pcolor">conference Room</p>
+
+                    <button class="btn">+</button>
+                </div>
+                <!--Reception Room-->
+                <div class="reception">
+                    <p class="pcolor">reception room</p>
+                    <button class="btn">+</button>
+
+                </div>
+                <!--security Room-->
+                <div class="security">
+                    <p class="pcolor">security room</p>
+                    <button class="btn">+</button>
+                </div>
+                <!--servers room-->
+                <div class="servers">
+                    <p class="pcolor">servers room</p>
+                    <button class="btn">+</button>
+                </div>
+
+                <!--staff room-->
+                <div class="staff">
+                    <p class="pcolor">staff room</p>
+                    <button class="btn">+</button>
+                </div>
+
+                <!--staff room-->
+                <div class="archive">
+                    <p class="pcolor">archive room</p>
+                    <button class="btn">+</button>
+                </div>
+            </div>
+
+        </main>
+
+
+
+    </div>
+
 </body>
+
 </html>

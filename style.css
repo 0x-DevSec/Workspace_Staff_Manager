@@ -1,4 +1,218 @@
- *{
+* {
     margin: 0;
     padding: 0;
- }
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.staff-card {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.staff-card img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.edit-btn {
+    margin-left: auto;
+    background: #ffb400;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 10px;
+    background: #3aaa35;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.main-area {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+}
+
+.floor-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.floor-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.worker {
+    position: absolute;
+    background: white;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.worker img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.floor-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+.floor-image {
+    width: 100%;
+    display: block;
+}
+
+/* workspace divs styles */
+
+.pcolor {
+    color: black;
+}
+
+.conference {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid red;
+    width: 350px;
+    height: 180px;
+}
+
+.btn {
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: orangered;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.reception {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    background: transparent;
+    /* fully transparent */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid red;
+    width: 350px;
+    height: 350px;
+}
+
+.security {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid red;
+    width: 210px;
+    height: 180px;
+}
+
+.servers {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: transparent;
+    /* fully transparent */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid red;
+    width: 210px;
+    height: 180px;
+    margin-right: 212px;
+}
+
+.staff {
+    position: absolute;
+    bottom: 1%;
+    right: 0%;
+    background: transparent;
+    /* fully transparent */
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid red;
+    width: 210px;
+    height: 180px;
+    margin-right: 212px;
+}
+.archive
+{
+    position: absolute;
+    bottom:1%;
+    right: 0%;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid red;
+    width: 210px;
+    height: 180px;
+}
