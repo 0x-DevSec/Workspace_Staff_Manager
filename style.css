@@ -1,220 +1,334 @@
 * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
 
-        body {
-            background: #f5f5f5;
-        }
+body {
+    background: #f5f5f5;
+}
 
-        .container {
-            display: flex;
-            height: 100vh;
-        }
+.container {
+    display: flex;
+    height: 100vh;
+}
 
-        .sidebar {
-            width: 260px;
-            background: #ffffff;
-            padding: 20px;
-            border-right: 1px solid #ddd;
-            flex-shrink: 0;
-        }
+.sidebar {
+    width: 260px;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    flex-shrink: 0;
+}
 
-        .sidebar h2 {
-            font-size: 17px;
-            margin-bottom: 15px;
-        }
+.sidebar h2 {
+    font-size: 17px;
+    margin-bottom: 15px;
+}
 
-        .staff-card {
-            background: #fafafa;
-            border: 1px solid #ddd;
-            padding: 12px;
-            display: flex;
-            align-items: center;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
+.staff-card {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
 
-        .staff-card img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+.staff-card img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
-        .edit-btn {
-            margin-left: auto;
-            background: #ffb400;
-            border: none;
-            padding: 6px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            color: white;
-        }
+.edit-btn {
+    margin-left: auto;
+    background: #ffb400;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+}
 
-        .add-btn {
-            width: 100%;
-            padding: 10px;
-            background: #3aaa35;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 15px;
-        }
+.add-btn {
+    width: 100%;
+    padding: 10px;
+    background: #3aaa35;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-        .main-area {
-            flex: 1;
-            padding: 20px;
-            overflow: auto;
-        }
+.main-area {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+}
 
-        /* Critical: This wrapper maintains aspect ratio */
-        .floor-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            /* Aspect ratio container - adjust padding-bottom to match your image ratio */
-            /* For a 16:9 image, use 56.25%. For 4:3, use 75%. Adjust as needed */
-            padding-bottom: 56.25%;
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+/* Critical: This wrapper maintains aspect ratio */
+.floor-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 56.25%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-        .floor-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+.floor-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
-        .worker {
-            position: absolute;
-            background: white;
-            padding: 0.5%;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.8vw;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+.worker {
+    position: absolute;
+    background: white;
+    padding: 0.5%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8vw;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-        .worker img {
-            width: 2%;
-            height: auto;
-            aspect-ratio: 1;
-            border-radius: 50%;
-        }
+.worker img {
+    width: 2%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
 
-        /* Workspace divs styles - ALL measurements in percentages */
-        .pcolor {
-            color:yellow;
-            font-size: 1.2vw;
-            font-weight: bold;
-        }
+.pcolor {
+    color:rgb(0, 5, 0);
+    font-size: 1,5vw;
+    font-weight: bold;
+    align-items: center;
+    position: relative;
+    left: 50px;
+    top: 10px;
+}
 
-        .btn {
-            border: none;
-            width: 1.5vw;
-            height: 1.5vw;
-            min-width: 15px;
-            min-height: 15px;
-            background-color: orangered;
-            position: absolute;
-            bottom: 3%;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            border-radius: 3px;
-        }
+.btn {
+    border: none;
+    width: 1.5vw;
+    height: 1.5vw;
+    min-width: 15px;
+    min-height: 15px;
+    background-color: orangered;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border-radius: 3px;
+}
 
-        /* Conference Room - Top Left */
-        .conference {
-            position: absolute;
-            top: 0.5%;
-            left: 0.5%;
-            background: rgba(255, 0, 0, 0.05);
-            padding: 1%;
-            border-radius: 0;
-            border: 3px solid red;
-            width: 37.5%;
-            height: 35%;
-        }
+/* Room positions */
+.conference {
+    position: absolute;
+    top: 0.5%;
+    left: 0.5%;
+    background: rgba(255, 0, 0, 0.05);
+    padding: 1%;
+    width: 37.5%;
+    height: 35%;
+}
 
-        /* Reception Room - Bottom Left */
-        .reception {
-            position: absolute;
-            bottom: 0.5%;
-            left: 0.5%;
-            background: rgba(255, 0, 0, 0.05);
-            padding: 1%;
-            border-radius: 0;
-            border: 3px solid red;
-            width: 37.5%;
-            height: 63.5%;
-        }
+.reception {
+    position: absolute;
+    bottom: 0.5%;
+    left: 0.5%;
+    background: rgba(255, 0, 0, 0.05);
+    padding: 1%;
+    width: 37.5%;
+    height: 63.5%;
+}
 
-        /* Security Room - Top Right */
-        .security {
-            position: absolute;
-            top: 0.5%;
-            right: 0.5%;
-            background: rgba(255, 0, 0, 0.05);
-            padding: 1%;
-            border-radius: 0;
-            border: 3px solid red;
-            width: 23%;
-            height: 35%;
-        }
+.security {
+    position: absolute;
+    top: 0.5%;
+    right: 0.5%;
+    background: rgba(255, 0, 0, 0.05);
+    padding: 1%;
+    width: 23%;
+    height: 35%;
+}
 
-        /* Servers Room - Top Middle Right */
-        .servers {
-            position: absolute;
-            top: 0.5%;
-            right: 23.5%;
-            background: rgba(255, 0, 0, 0.05);
-            padding: 1%;
-            border-radius: 0;
-            border: 3px solid red;
-            width: 23%;
-            height: 35%;
-        }
+.servers {
+    position: absolute;
+    top: 0.5%;
+    right: 23.5%;
+    background: rgba(255, 0, 0, 0.05);
+    padding: 1%;
+    width: 23%;
+    height: 35%;
+}
 
-        /* Staff Room - Bottom Middle Right */
-        .staff {
-            position: absolute;
-            bottom: 0.5%;
-            right: 23.5%;
-            background: rgba(255, 0, 0, 0.05);
-            padding: 1%;
-            border-radius: 0;
-            border: 3px solid red;
-            width: 23%;
-            height: 35%;
-        }
+.staff {
+    position: absolute;
+    bottom: 0.5%;
+    right: 23.5%;
+    background: rgba(255, 0, 0, 0.05);
+    padding: 1%;
+    width: 23%;
+    height: 35%;
+}
 
-        /* Archive Room - Bottom Right */
-        .archive {
-            position: absolute;
-            bottom: 0.5%;
-            right: 0.5%;
-            background: rgba(255, 0, 0, 0.05);
-            padding: 1%;
-            border-radius: 0;
-            border: 3px solid red;
-            width: 23%;
-            height: 35%;
-        }
+.archive {
+    position: absolute;
+    bottom: 0.5%;
+    right: 0.5%;
+    background: rgba(255, 0, 0, 0.05);
+    padding: 1%;
+    width: 23%;
+    height: 35%;
+}
 
-        /* Make sure room divs scale with viewport width */
-        .conference, .reception, .security, .servers, .staff, .archive {
-            box-sizing: border-box;
-        }
+/* ========== MODAL CSS (Added) ========== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: flex; /* visible for now */
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+.modal-box {
+    width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.modal-box h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.modal-form label {
+    display: block;
+    margin: 8px 0 3px;
+    font-size: 14px;
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.modal-cancel {
+    padding: 8px 14px;
+    background: #999;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-submit {
+    padding: 8px 14px;
+    background: #3aaa35;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Edit Modal (Second Popup) ===== */
+.edit-modal-overlay {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: none; /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 6000;
+}
+
+.edit-modal-box {
+    width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.edit-modal-box h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.edit-modal-form label {
+    display: block;
+    margin: 8px 0 3px;
+    font-size: 14px;
+}
+
+.edit-modal-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.edit-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.edit-modal-cancel {
+    padding: 8px 14px;
+    background: #999;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-modal-submit {
+    padding: 8px 14px;
+    background: #ffb400;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}

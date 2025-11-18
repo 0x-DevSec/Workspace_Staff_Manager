@@ -38,20 +38,21 @@
                 <!--Conference Room-->
                 <div class="conference">
                     <P class="pcolor">conference Room</p>
-
                     <button class="btn">+</button>
                 </div>
+
                 <!--Reception Room-->
                 <div class="reception">
                     <p class="pcolor">reception room</p>
                     <button class="btn">+</button>
-
                 </div>
+
                 <!--security Room-->
                 <div class="security">
                     <p class="pcolor">security room</p>
                     <button class="btn">+</button>
                 </div>
+
                 <!--servers room-->
                 <div class="servers">
                     <p class="pcolor">servers room</p>
@@ -64,19 +65,87 @@
                     <button class="btn">+</button>
                 </div>
 
-                <!--staff room-->
+                <!--archive room-->
                 <div class="archive">
                     <p class="pcolor">archive room</p>
                     <button class="btn">+</button>
                 </div>
+
             </div>
-
         </main>
-
-
-
     </div>
 
+    <!-- ===== Modal (Visible for styling) ===== -->
+    <div class="modal-overlay hidden">
+        <div class="modal-box">
+            <h3>Add New Worker</h3>
+
+            <form class="modal-form">
+                <label>Name:</label>
+                <input type="text" placeholder="Enter name">
+
+                <label>Role:</label>
+                <input type="text" placeholder="Enter role">
+
+                <label>Photo URL:</label>
+                <input type="text" placeholder="Image link">
+
+                <label>Email:</label>
+                <input type="email" placeholder="Email">
+
+                <label>Phone:</label>
+                <input type="text" placeholder="Phone number">
+
+                <label>Experience:</label>
+                <input type="text" placeholder="Ex: 3 years">
+
+                <label>Work Hours:</label>
+                <input type="text" placeholder="Ex: from 11:00 to 16:00">
+
+                <div class="modal-actions">
+                    <button type="button" class="modal-cancel">Cancel</button>
+                    <button type="submit" class="modal-submit">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== Edit Worker Modal ===== -->
+<div class="edit-modal-overlay">
+    <div class="edit-modal-box">
+        <h3>Edit Worker Information</h3>
+
+        <form class="edit-modal-form">
+            <label>Name:</label>
+            <input type="text" id="edit-name">
+
+            <label>Role:</label>
+            <input type="text" id="edit-role">
+
+            <label>Photo URL:</label>
+            <input type="text" id="edit-photo">
+
+            <label>Email:</label>
+            <input type="email" id="edit-email">
+
+            <label>Phone:</label>
+            <input type="text" id="edit-phone">
+
+            <label>Experience:</label>
+            <input type="text" id="edit-experience">
+
+            <label>Work Hours:</label>
+            <input type="text" id="edit-hours">
+
+            <div class="edit-modal-actions">
+                <button type="button" class="edit-modal-cancel">Cancel</button>
+                <button type="submit" class="edit-modal-submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 </body>
+
 
 </html>

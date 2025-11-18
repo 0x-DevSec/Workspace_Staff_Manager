@@ -1,1 +1,1 @@
-alert("test")
+document.querySelector('.modal-overlay').style.display = 'none';
