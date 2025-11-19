@@ -57,6 +57,7 @@ form.addEventListener('submit', (e) => {
 
 
     const data = {
+        id:Date.now(),
         name: name.value,
         role: role.value,
         photo: Photo.value,
@@ -71,25 +72,3 @@ form.addEventListener('submit', (e) => {
     form.reset();
     modaloverlay.classList.add('hidden');
 });
-
-// ================= DISPLAY WORKERS ====================
-
-const displayWorkers = () => {
-
-    workers.forEach((worker, index) => {
-
-        const card = document.createElement("div");
-        card.classList.add("worker-card");
-        card.dataset.index = index;
-
-        card.innerHTML = `
-            <img src="${worker.photo}">
-            <div>
-                <h4>${worker.name}</h4>
-                <p>${worker.role}</p>
-            </div>
-            <button class="edit-btn">Edit</button>
-        `;
-        sidebar.appendChild(card);
-    });
-};
