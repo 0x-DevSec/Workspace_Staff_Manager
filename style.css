@@ -113,8 +113,8 @@ body {
 }
 
 .pcolor {
-    color:rgb(0, 5, 0);
-    font-size: 1,5vw;
+    color: rgb(0, 5, 0);
+    font-size: 1, 5vw;
     font-weight: bold;
     align-items: center;
     position: relative;
@@ -205,8 +205,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.45);
-    display: flex; /* visible for now */
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    /* visible for now */
     align-items: center;
     justify-content: center;
     z-index: 5000;
@@ -273,8 +274,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.45);
-    display: none; /* hidden by default */
+    background: rgba(0, 0, 0, 0.45);
+    display: none;
+    /* hidden by default */
     align-items: center;
     justify-content: center;
     z-index: 6000;
@@ -332,3 +334,107 @@ body {
     border: none;
     cursor: pointer;
 }
+
+.hidden {
+    display: none;
+}
+
+
+/* --- Worker cards shown inside rooms --- */
+.worker-card {
+    background: white;
+    margin-top: 2px;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    position: relative;
+    /* required for X button */
+}
+
+.worker-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* --- Delete (X) button --- */
+.remove-worker {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: red;
+    color: white;
+    border: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* for selected card*/
+.staff-card.selected {
+    border: 3px solid #4A90E2;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.6);
+    border-radius: 10px;
+}
+
+/* show deatil*/
+
+.detail-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+.detail-overlay.hidden {
+    display: none;
+}
+
+.detail-modal {
+    width: 360px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+    animation: fadeIn 0.2s ease-out;
+    position: relative;
+    text-align: center;
+}
+
+.detail-modal img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.detail-close {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.detail-info {
+    margin-top: 15px;
+    text-align: left;
+}
+

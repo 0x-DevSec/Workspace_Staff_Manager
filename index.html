@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Office Layout</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
@@ -15,15 +16,6 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <h2>Staff Members (Unassigned)</h2>
-
-            <div class="staff-card">
-                <img src="https://avatar.iran.liara.run/public/1" alt="User">
-                <div>
-                    <h4>Hamza</h4>
-                    <p>staff</p>
-                </div>
-                <button class="edit-btn">Edit</button>
-            </div>
 
             <button class="add-btn">Add New Worker</button>
         </aside>
@@ -85,7 +77,16 @@
                 <input type="text" placeholder="Enter name">
 
                 <label>Role:</label>
-                <input type="text" placeholder="Enter role">
+                <select id="add-role">
+                    <option value="">-- Select Role --</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Security">Security</option>
+                    <option value="Receptionist">Receptionist</option>
+                    <option value="Staff">Staff</option>
+                </select>
+
 
                 <label>Photo URL:</label>
                 <input type="text" placeholder="Image link">
@@ -111,39 +112,59 @@
     </div>
 
     <!-- ===== Edit Worker Modal ===== -->
-<div class="edit-modal-overlay">
-    <div class="edit-modal-box">
-        <h3>Edit Worker Information</h3>
+    <div class="edit-modal-overlay">
+        <div class="edit-modal-box">
+            <h3>Edit Worker Information</h3>
 
-        <form class="edit-modal-form">
-            <label>Name:</label>
-            <input type="text" id="edit-name">
+            <form class="edit-modal-form">
+                <label>Name:</label>
+                <input type="text" id="edit-name">
 
-            <label>Role:</label>
-            <input type="text" id="edit-role">
+                <label>Role:</label>
+                <input type="text" id="edit-role">
 
-            <label>Photo URL:</label>
-            <input type="text" id="edit-photo">
+                <label>Photo URL:</label>
+                <input type="text" id="edit-photo">
 
-            <label>Email:</label>
-            <input type="email" id="edit-email">
+                <label>Email:</label>
+                <input type="email" id="edit-email">
 
-            <label>Phone:</label>
-            <input type="text" id="edit-phone">
+                <label>Phone:</label>
+                <input type="text" id="edit-phone">
 
-            <label>Experience:</label>
-            <input type="text" id="edit-experience">
+                <label>Experience:</label>
+                <input type="text" id="edit-experience">
 
-            <label>Work Hours:</label>
-            <input type="text" id="edit-hours">
+                <label>Work Hours:</label>
+                <input type="text" id="edit-hours">
 
-            <div class="edit-modal-actions">
-                <button type="button" class="edit-modal-cancel">Cancel</button>
-                <button type="submit" class="edit-modal-submit">Save</button>
-            </div>
-        </form>
+                <div class="edit-modal-actions">
+                    <button type="button" class="edit-modal-cancel">Cancel</button>
+                    <button type="submit" class="edit-modal-submit">Save</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
+
+    <!-- WORKER DETAIL MODAL -->
+    <div class="detail-overlay hidden">
+        <div class="detail-modal">
+            <button class="detail-close">×</button>
+
+            <img class="detail-photo" src="" alt="Worker">
+
+            <h2 class="detail-name"></h2>
+            <h4 class="detail-role"></h4>
+
+            <div class="detail-info">
+                <p><strong>Email:</strong> <span id="detail-email"></span></p>
+                <p><strong>Phone:</strong> <span id="detail-phone"></span></p>
+                <p><strong>Experience:</strong> <span id="detail-exp"></span></p>
+                <p><strong>Hours:</strong> <span id="detail-hours"></span></p>
+            </div>
+        </div>
+    </div>
+
 
 </body>
 
