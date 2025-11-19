@@ -81,7 +81,7 @@
                     <option value="">-- Select Role --</option>
                     <option value="Manager">Manager</option>
                     <option value="Developer">Developer</option>
-                    <option value="Designer">Designer</option>
+                    <option value="Designer">archiver</option>
                     <option value="Security">Security</option>
                     <option value="Receptionist">Receptionist</option>
                     <option value="Staff">Staff</option>
@@ -92,16 +92,22 @@
                 <input type="text" placeholder="Image link">
 
                 <label>Email:</label>
-                <input type="email" placeholder="Email">
+                <input type="email" placeholder="Email" required>
 
                 <label>Phone:</label>
                 <input type="text" placeholder="Phone number">
+                <button type="button " class="experience">Add Experience</button>
+                <div class="hidden divexperience">
+                    <label for="jobTitle">Job Title:</label>
+                    <input type="text" id="jobTitle" name="jobTitle">
 
-                <label>Experience:</label>
-                <input type="text" placeholder="Ex: 3 years">
+                    <label for="companyName">Company Name:</label>
+                    <input type="text" id="companyName" name="companyName">
 
-                <label>Work Hours:</label>
-                <input type="text" placeholder="Ex: from 11:00 to 16:00">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location">
+                </div>
+
 
                 <div class="modal-actions">
                     <button type="button" class="modal-cancel">Cancel</button>

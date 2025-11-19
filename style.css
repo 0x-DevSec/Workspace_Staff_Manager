@@ -342,12 +342,11 @@ body {
 
 /* --- Worker cards shown inside rooms --- */
 .worker-card {
-    background: white;
+    background: rgb(36, 191, 173);
     margin-top: 2px;
     border-radius: 2px;
     text-align: center;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    padding: 5px;
+    padding: 6px;
     position: relative;
     /* required for X button */
 }
@@ -389,7 +388,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0, 0, 0, 0.55);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -405,7 +404,7 @@ body {
     background: #fff;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.2s ease-out;
     position: relative;
     text-align: center;
@@ -438,3 +437,11 @@ body {
     text-align: left;
 }
 
+.experience {
+    padding: 8px 14px;
+    background: #3aaa35;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
