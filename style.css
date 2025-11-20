@@ -124,11 +124,11 @@ body {
 
 .btn {
     border: none;
-    width: 1.5vw;
-    height: 1.5vw;
+    width: 1.9vw;
+    height: 1.9vw;
     min-width: 15px;
     min-height: 15px;
-    background-color: orangered;
+    background-color: #3aaa35;
     position: absolute;
     bottom: 3%;
     left: 50%;
@@ -342,18 +342,18 @@ body {
 
 /* --- Worker cards shown inside rooms --- */
 .worker-card {
-    background: rgb(36, 191, 173);
+    background: rgb(215, 241, 238);
     margin-top: 2px;
     border-radius: 2px;
     text-align: center;
-    padding: 6px;
+    padding: 3px;
     position: relative;
     /* required for X button */
 }
 
 .worker-card img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 
