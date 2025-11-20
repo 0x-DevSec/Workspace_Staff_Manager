@@ -445,3 +445,38 @@ body {
     border: none;
     cursor: pointer;
 }
+
+/* ================================
+   RESPONSIVE FIXES (SAFE ADDITIONS)
+   ================================ */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .main-area {
+        padding: 10px;
+    }
+
+    .pcolor {
+        font-size: 2.5vw;
+        left: 20px;
+    }
+
+    .btn {
+        width: 3vw;
+        height: 3vw;
+        min-width: 18px;
+        min-height: 18px;
+    }
+}
