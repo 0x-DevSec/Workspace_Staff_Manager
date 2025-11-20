@@ -1,12 +1,7 @@
 // ========================================
-// WORKER MANAGEMENT SYSTEM
-// ========================================
-// This script manages workers and their assignments to different rooms.
-// Features: Add, edit, view worker details, and assign workers to rooms based on their roles.
-
-// ========================================
 // DATA STORAGE
 // ========================================
+
 let workers = []; // Stores all worker objects
 let workersInRooms = []; // Tracks IDs of workers currently assigned to rooms
 let selectedWorker = null; // Currently selected worker for assignment
