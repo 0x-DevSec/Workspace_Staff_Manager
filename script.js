@@ -22,11 +22,14 @@ const detailModal = document.querySelector(".detail-overlay"); // Modal for view
 // VALIDATION FUNCTION
 // ========================================
 // Validates worker input fields before adding/editing
-function validate(name, email, phone, photo) {
+function validate(name, email, phone, photo,jobTitle,location,company) {
     if (name.length < 2) return alert("Name too short!");
     if (!email.includes('@')) return alert("Invalid email!");
     if (!/^\d{7,15}$/.test(phone)) return alert("Invalid phone!");
     if (!photo.match(/\.(jpg|jpeg|png|gif|webp)$/i)) return alert("Invalid photo URL!");
+    // if (jobTitle == '') return alert("jobtitle is empty");
+    // if(location == '') return alert("location is empty");
+    // if(company=='') return alert(" companyName is empty");
     return true;
 }
 
@@ -105,6 +108,7 @@ form.onsubmit = (event) => {
     const phone = form.querySelector("input[placeholder='Phone number']").value.trim();
     const jobTitle = document.getElementById("jobTitle").value.trim();
     const location = document.getElementById("location").value.trim();
+    const company =  document.getElementById("companyName").value.trim();
     
     // Validate inputs
     if (!validate(name, email, phone, photo)) return;
@@ -118,7 +122,7 @@ form.onsubmit = (event) => {
         email: email,
         phone: phone,
         jobTitle: jobTitle,
-        companyName: document.getElementById("companyName").value.trim(),
+        companyName: company,
         location: location
     });
     
@@ -210,7 +214,7 @@ function createRoomCard(worker) {
     
     // Remove worker from room
     card.querySelector(".remove-worker").onclick = (event) => {
-        event.stopPropagation();
+        event.stopPropagation(); // fix double click error
         card.remove();
         workersInRooms = workersInRooms.filter(id => id !== workerId);
         showWorkers(); // Re-display in sidebar
