@@ -22,7 +22,7 @@ const detailModal = document.querySelector(".detail-overlay"); // Modal for view
 // VALIDATION FUNCTION
 // ========================================
 // Validates worker input fields before adding/editing
-function validate(name, email, phone, photo,jobTitle,location,company) {
+function validate(name, email, phone, photo, jobTitle, location, company) {
     if (name.length < 2) return alert("Name too short!");
     if (!email.includes('@')) return alert("Invalid email!");
     if (!/^\d{7,15}$/.test(phone)) return alert("Invalid phone!");
@@ -40,11 +40,11 @@ function validate(name, email, phone, photo,jobTitle,location,company) {
 function showWorkers() {
     // Remove existing worker cards
     sidebar.querySelectorAll(".staff-card").forEach(card => card.remove());
-    
+
     // Create card for each unassigned worker
     workers.forEach((worker, index) => {
         if (workersInRooms.includes(worker.id)) return; // Skip workers already in rooms
-        
+
         const card = document.createElement("div");
         card.classList.add("staff-card");
         card.dataset.id = worker.id;
@@ -53,7 +53,7 @@ function showWorkers() {
             <div><h4>${worker.name}</h4><p>${worker.role}</p></div>
             <button class="edit-btn">Edit</button>
         `;
-        
+
         // Handle card clicks (edit button or select worker)
         card.onclick = (event) => {
             if (event.target.classList.contains("edit-btn")) {
@@ -74,7 +74,7 @@ function showWorkers() {
                 card.classList.add("selected");
             }
         };
-        
+
         sidebar.insertBefore(card, addBtn);
     });
 }
@@ -99,7 +99,7 @@ document.querySelector(".experience").onclick = () => {
 // Handle add worker form submission
 form.onsubmit = (event) => {
     event.preventDefault();
-    
+
     // Get form values
     const name = form.querySelector("input[placeholder='Enter name']").value.trim();
     const role = document.getElementById("add-role").value;
@@ -108,11 +108,11 @@ form.onsubmit = (event) => {
     const phone = form.querySelector("input[placeholder='Phone number']").value.trim();
     const jobTitle = document.getElementById("jobTitle").value.trim();
     const location = document.getElementById("location").value.trim();
-    const company =  document.getElementById("companyName").value.trim();
-    
+    const company = document.getElementById("companyName").value.trim();
+
     // Validate inputs
     if (!validate(name, email, phone, photo)) return;
-    
+
     // Add new worker to array
     workers.push({
         id: Date.now(), // Unique ID based on timestamp
@@ -125,7 +125,7 @@ form.onsubmit = (event) => {
         companyName: company,
         location: location
     });
-    
+
     // Update UI and close modal
     showWorkers();
     modal.classList.add("hidden");
@@ -141,7 +141,7 @@ document.querySelector(".edit-modal-cancel").onclick = () => editModal.style.dis
 // Handle edit worker form submission
 editForm.onsubmit = (event) => {
     event.preventDefault();
-    
+
     // Update worker data
     const worker = workers[editIndex];
     worker.name = document.getElementById("edit-name").value.trim();
@@ -151,7 +151,7 @@ editForm.onsubmit = (event) => {
     worker.phone = document.getElementById("edit-phone").value.trim();
     worker.jobTitle = document.getElementById("edit-experience").value.trim();
     worker.location = document.getElementById("edit-hours").value.trim();
-    
+
     // Update UI and close modal
     showWorkers();
     editModal.style.display = "none";
@@ -164,7 +164,7 @@ editForm.onsubmit = (event) => {
 function showDetail(workerId) {
     const worker = workers.find(worker => String(worker.id) === String(workerId));
     if (!worker) return;
-    
+
     // Populate detail modal with worker info
     document.querySelector(".detail-photo").src = worker.photo;
     document.querySelector(".detail-name").textContent = worker.name;
@@ -195,8 +195,16 @@ const roomRoles = {
 // Check if worker's role matches room requirements
 function canAssignToRoom(worker, roomName) {
     const requiredRole = roomRoles[roomName];
-    if (!requiredRole) return true; // No role requirement
-    return worker.role.toLowerCase() === requiredRole.toLowerCase();
+
+    const role = worker.role.toLowerCase();
+
+    if (role === "nettoyage" && roomName === "archive") {
+        return false;
+    }
+
+    if (!requiredRole) return true;
+
+    return role === requiredRole.toLowerCase();
 }
 
 // Create a worker card for display in a room
@@ -209,9 +217,9 @@ function createRoomCard(worker) {
         <img src="${worker.photo}" alt="${worker.name}">
         <h4>${worker.name}</h4>
     `;
-    
+
     const workerId = worker.id;
-    
+
     // Remove worker from room
     card.querySelector(".remove-worker").onclick = (event) => {
         event.stopPropagation(); // fix double click error
@@ -219,10 +227,10 @@ function createRoomCard(worker) {
         workersInRooms = workersInRooms.filter(id => id !== workerId);
         showWorkers(); // Re-display in sidebar
     };
-    
+
     // Click card to view worker details
     card.onclick = () => showDetail(card.dataset.id);
-    
+
     return card;
 }
 
@@ -233,20 +241,20 @@ function createRoomCard(worker) {
 document.querySelectorAll(".btn").forEach(button => {
     button.onclick = () => {
         if (!selectedWorker) return alert("Select a worker first!");
-        
+
         // Get room information
         const room = button.closest("div");
         const roomName = room.classList[0];
-        
+
         // Check if worker can be assigned to this room
         if (!canAssignToRoom(selectedWorker, roomName)) {
             return alert(`${selectedWorker.name} cannot be assigned to ${roomName}`);
         }
-        
+
         // Create card and add to room
         const roomCard = createRoomCard(selectedWorker);
         room.appendChild(roomCard);
-        
+
         // Update tracking arrays and remove from sidebar
         workersInRooms.push(selectedWorker.id);
         document.querySelector(`.staff-card[data-id="${selectedWorker.id}"]`).remove();
