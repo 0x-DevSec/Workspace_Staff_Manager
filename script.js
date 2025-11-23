@@ -70,7 +70,7 @@ function showWorkers() {
             }
         };
 
-        sidebar.insertBefore(card, addBtn);
+        sidebar.insertBefore(card,addBtn);
     });
 }
 
